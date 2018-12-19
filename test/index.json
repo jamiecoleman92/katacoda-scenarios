@@ -6,7 +6,6 @@
       {
         "title": "Step 1",
         "text": "step1.md"
-	
       },
       {
         "title": "Step 2",
@@ -23,16 +22,10 @@
   "assets": {
     "client": [
       {
-        "file": "docker-compose.yml",
+        "file": "kubernetes.yaml",
         "target": "~/"
       }
     ],
-    "host01": [
-      {
-        "file": "config.yml",
-        "target": "~/"
-      }
-    ]
   }
    "finish": {
       "text": "finish.md"
