@@ -17,7 +17,7 @@
       }
     ],
   "intro": {
-    "courseData": "sample.sh",
+    "courseData": "sample.sh"
   },
     "finish": {
       "text": "finish.md"
