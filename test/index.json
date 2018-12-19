@@ -18,15 +18,22 @@
       }
     ],
   "intro": {
-    "courseData": "sample.sh"
+    "courseData": "courseBase.sh",
   },
   "assets": {
     "client": [
       {
-        "file": "kubernetes.yaml",
+        "file": "docker-compose.yml",
         "target": "~/"
       }
-    ]}
+    ],
+    "host01": [
+      {
+        "file": "config.yml",
+        "target": "~/"
+      }
+    ]
+  }
    "finish": {
       "text": "finish.md"
     }
