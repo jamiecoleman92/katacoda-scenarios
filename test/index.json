@@ -16,9 +16,9 @@
         "text": "step3.md"
       }
     ],
-    "intro": {
-      "text": "intro.md"
-    },
+  "intro": {
+    "courseData": "sample.sh",
+  },
     "finish": {
       "text": "finish.md"
     }
