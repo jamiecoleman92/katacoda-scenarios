@@ -18,15 +18,9 @@
     ],
   "intro": {
     "courseData": "courseBase.sh",
+    "file": "docker-compose.yml",
+    "target": "~/"
   },
-  "assets": {
-    "client": [
-      {
-        "file": "kubernetes.yaml",
-        "target": "~/"
-      }
-    ]
-  }
    "finish": {
       "text": "finish.md"
     }
