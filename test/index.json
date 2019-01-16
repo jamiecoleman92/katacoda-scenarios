@@ -19,7 +19,7 @@
   "intro": {
     "courseData": "courseBase.sh",
     "file": "docker-compose.yml",
-    "target": "~/"
+    "target": "/"
   },
    "finish": {
       "text": "finish.md"
