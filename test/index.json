@@ -21,7 +21,15 @@
   },
    "finish": {
       "text": "finish.md"
-      }
+    },
+    "assets": {
+      "client": [
+        {
+          "file": "sample.sh",
+          "target": "~/"
+        }
+      ]
+    }
     },
   "environment": {
     "uilayout": "terminal"
