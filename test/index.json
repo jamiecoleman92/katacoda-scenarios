@@ -17,9 +17,7 @@
       }
     ],
   "intro": {
-    "courseData": "courseBase.sh",
-    "file": "docker-compose.yml",
-    "target": "/"
+    "text": "intro.md"
   },
    "finish": {
       "text": "finish.md"
