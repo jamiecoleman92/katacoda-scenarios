@@ -24,9 +24,9 @@
       "text": "finish.md"
     },
     "assets": {
-      "client": [
+      "host01": [
         {
-          "file": "sample.sh",
+          "file": "kubernetes.yaml",
           "target": "~/"
         }
       ]
