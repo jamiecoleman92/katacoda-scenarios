@@ -2,7 +2,7 @@
   "title": "Kubernetes Microservice Health Tutorial",
   "description": "Test the health of two Java Microserives with health check",
   "difficulty": "beginner",
-  "time": "2 minutes",
+  "time": "5 minutes",
   "details": {
     "steps": [
       {
@@ -38,6 +38,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes"
+    "imageid": "minikube"
   }
 }
