@@ -1,4 +1,4 @@
-## Deploy our microservices
+## Deploy the microservices
 
 Lets take a look at the provided file kubernetes.yaml that we will use to deploy our two Java microservices.
 

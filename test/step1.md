@@ -1,8 +1,10 @@
-## Take a look at the deployment file provided
+## Set up minikube
 
 Firstly lets create our Kubernetes cluster using minikube. Execute the following command to get one set up:
 
 `minikube start`{{execute}}
+
+This will take around 30 seconds to complete.
 
 Now lets just do a quick check to make sure our Kubernetes environment is up and running by executing the following command:
 

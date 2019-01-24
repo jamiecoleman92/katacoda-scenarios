@@ -14,4 +14,4 @@ You should see a response similar to the following:
 
 **Hello! I'm container [container name]**
 
-Once you have seen the above message in your terminal you can move to the next step.
+Similarly, navigate to `curl http://[hostname]:31000/api/name` and observe a response with the content pong.
