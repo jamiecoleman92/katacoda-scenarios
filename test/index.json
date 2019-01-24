@@ -1,6 +1,8 @@
 {
-  "title": "Java Tutorial",
-  "description": "A test of this software",
+  "title": "Kubernetes Microservice Health Tutorial",
+  "description": "Test the health of two Java Microserives with health check",
+  "difficulty": "beginner",
+  "time": "2 minutes",
   "details": {
     "steps": [
       {
