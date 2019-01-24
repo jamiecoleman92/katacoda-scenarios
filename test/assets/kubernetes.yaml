@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: name-container
-        image: name:1.0-SNAPSHOT
+        image: jamielcoleman/kubejavasample:name
         ports:
         - containerPort: 9080
         # name probe
@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: ping-container
-        image: ping:1.0-SNAPSHOT
+        image: jamielcoleman/kubejavasample:ping
         ports:
         - containerPort: 9080
         env:
