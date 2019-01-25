@@ -1,4 +1,4 @@
-## Making out Microservices Unhealthy
+## Make one of your Microservices Unhealthy
 
 Now your microservices are up and running and you have made sure that you requests are working we now need to go and make one of our services unhealthy. We do this by hitting a specific health endpoint provided by the MicroProfile spec that allows you to make a service unhealthy.
 
