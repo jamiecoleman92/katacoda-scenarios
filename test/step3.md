@@ -12,10 +12,10 @@ Now you need to set the variable IP to the IP address of your minikube cluster b
 
 Now replace the hostname in the command below with the IP address produced by the previous command to send a request to the microservice.
 
-`curl http://$IP:31000/api/name`
+`curl http://$IP:31000/api/name`{{execute}}
 
 You should see a response similar to the following:
 
 **Hello! I'm container [container name]**
 
-Similarly, navigate to `curl http://$IP:32000/api/ping/name-service` and observe a response with the content pong.
+Similarly, navigate to `curl http://$IP:32000/api/ping/name-service`{{execute}} and observe a response with the content pong.
