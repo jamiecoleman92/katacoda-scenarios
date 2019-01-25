@@ -10,4 +10,4 @@ Now lets just do a quick check to make sure our Kubernetes environment is up and
 
 `kubectl get nodes`{{execute}}
 
-If you see the minikube node status as not ready then you may have to wait 30 - 60 seconds for it to become available. Once it has the status **Ready** you can then move on to the next step.
+If you see the minikube node status as not ready then you may have to wait 5-15 seconds for it to become available. Once it has the status **Ready** you can then move on to the next step.
