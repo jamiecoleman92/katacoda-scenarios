@@ -1,6 +1,6 @@
 ## Making requests to the microservices
 
-Now our microservices are deployed and running with the **Ready** status we are ready to send some request to it.
+Now our microservices are deployed and running with the **Ready** status we are ready to send some requests.
 
 First lets check the IP address of our minikube cluster by running the following command:
 

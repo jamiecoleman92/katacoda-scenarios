@@ -1,4 +1,4 @@
-## Set up minikube
+## Start up minikube
 
 Firstly lets create our Kubernetes cluster using minikube. Execute the following command to get one set up:
 
