@@ -1,16 +1,16 @@
 ## Making requests to the microservices
 
-Now our microservices are deployed and running with the **Ready** status we are ready to send some requests.
+Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
 
-First lets check the IP address of our minikube cluster by running the following command:
+Firstly check the IP address of your Kubernetes cluster by running the following command:
 
 `minikube ip`{{execute}}
 
-Now you need to set the variable IP to the IP address of your minikube cluster by running the following command:
+Now you need to set the variable IP to the IP address of your Kubernetes cluster by running the following command:
 
 `IP=$(minikube ip)`{{execute}}
 
-Now replace the hostname in the command below with the IP address produced by the previous command to send a request to the microservice.
+Now when you run the following command it will use the IP address of your cluster.
 
 `curl http://$IP:31000/api/name`{{execute}}
 
