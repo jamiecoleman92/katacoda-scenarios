@@ -1,6 +1,6 @@
 {
-  "title": "Configuring a Kubernetes Microservice",
-  "description": "Configure a Java Microservice using Kubernetes and MicroProfile",
+  "title": "Kubernetes Microservice Health Tutorial Test",
+  "description": "Test the health of two Java Microserives with health check",
   "difficulty": "beginner",
   "time": "15 minutes",
   "details": {
