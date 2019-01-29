@@ -8,7 +8,7 @@ While you are waiting for your services to start up, take a look at the provided
 
 `cat kubernetes.yaml`{{execute}}
 
-Here you can see two different deployments, one for each of our microservices. For each deployment, you can find information relating to the readiness probe, provided by Kubernetes, underneath the ‘readinessProbe’ attribute.
+If you scroll up, you can see two different deployments, one for each of our microservices. For each deployment, you can find information relating to the readiness probe, provided by Kubernetes, underneath the ‘readinessProbe’ attribute.
 
 Now you need to check the states of our pods by using the following command:
 
