@@ -1,5 +1,5 @@
 {
-  "title": "Kubernetes Microservice Health Tutorial Test",
+  "title": "Kubernetes Microservice Health Tutorial",
   "description": "Test the health of two Java Microserives with health check",
   "difficulty": "beginner",
   "time": "15 minutes",
