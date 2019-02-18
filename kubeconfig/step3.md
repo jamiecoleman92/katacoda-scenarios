@@ -1,21 +1,38 @@
 ## Modifying the Name Microservice
 
-Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
+The name service is hardcoded to have Hello! as the greeting message. You’ll make this message configurable. Replace the NameResource class in the name/src/main/java/io/openliberty/guides/name/NameResource.java file with the following by using the provided text editor in Katacoda:
 
-Firstly check the IP address of your Kubernetes cluster by running the following command:
+```java
+package io.openliberty.guides.name;
 
-`minikube ip`{{execute}}
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
-Now you need to set the variable IP to the IP address of your Kubernetes cluster by running the following command:
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-`IP=$(minikube ip)`{{execute}}
+@RequestScoped
+@Path("/")
+public class NameResource {
 
-Now when you run the following command it will use the IP address of your cluster.
+    @Inject
+    @ConfigProperty(name = "GREETING")
+    private String greeting;
 
-`curl http://$IP:31000/api/name`{{execute}}
+    @Inject
+    @ConfigProperty(name = "HOSTNAME")
+    private String hostname;
 
-You should see a response similar to the following:
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getContainerName() {
+        return greeting + " I'm container " + hostname + "\n";
+    }
 
-**Hello! I'm container [container name]**
+}
+```
 
-Similarly, navigate to `curl http://$IP:32000/api/ping/name-service`{{execute}} and observe a response with the content pong.
+These changes use MicroProfile Config and CDI to inject the value of an environment variable called GREETING into the greeting member of the NameResource class.

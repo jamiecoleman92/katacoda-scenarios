@@ -25,11 +25,19 @@
       {
         "title": "",
         "text": "step5.md"
+      },
+      {
+        "title": "",
+        "text": "step6.md"
+      },
+      {
+        "title": "",
+        "text": "step7.md"
       }
     ],
   "intro": {
     "text": "intro.md",
-    "code": "pre.sh"
+    "courseData": "pre.sh"
   },
    "finish": {
       "text": "finish.md"
