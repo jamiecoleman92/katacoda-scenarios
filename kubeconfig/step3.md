@@ -1,4 +1,4 @@
-## Making requests to the microservices
+## Modifying the Name Microservice
 
 Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
 

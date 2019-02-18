@@ -20,4 +20,4 @@ This Kubernetes readiness probe in these services are using MicroProfile health.
 
 `kubectl get pods`{{execute}}
 
-You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservice is fully deployed and waiting for requests. Once this has happened you can move on to the next step.
+You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next step.
