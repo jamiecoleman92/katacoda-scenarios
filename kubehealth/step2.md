@@ -10,8 +10,8 @@ While you are waiting for your services to start up, take a look at the provided
 
 For each deployment, you can find information relating to the readiness probe, provided by Kubernetes, underneath the ‘readinessProbe’ attribute.
 
-Now you need to check the states of your pods. This is using the Kubernetes readiness probe that is using MicroProfile health by using the following command:
+This Kubernetes readiness probe in these services are using MicroProfile health. Issue the following command to check the health of your pods:
 
 `kubectl get pods`{{execute}}
 
-Now we need to wait until the pods are ready and once they are you can move onto the next step.
+You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservice is fully deployed and waiting for requests. Once this has happened you can move on to the next step.

@@ -1,4 +1,4 @@
-## Make one of your Microservices Unhealthy
+## Turn one of your Microservices Unhealthy
 
 Now that your microservices are up and running and you have made sure that your requests are working, we can monitor the microservices’ health. Let’s start by making one of our microservices unhealthy. To do this, we need to hit a specific health endpoint provided by the MicroProfile specification, which allows you to make a service unhealthy
 
