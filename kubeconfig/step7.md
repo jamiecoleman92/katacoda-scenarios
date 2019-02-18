@@ -6,7 +6,14 @@ Rebuild the application using the following commands:
 
 `mvn package -pl ping`{{execute}}
 
-Issue a curl command to http://[hostname]:31000/api/name and you will see that the greeting message has changed from Hello! to Greetings…​.
+Now you need to delete your old deployment then deploy your updated microservices by issuing the following commands:
+
+`kubectl delete -f kubernetes.yaml`{{execute}}
+
+`kubectl apply -f kubernetes.yaml`{{execute}}
+
+
+After around 20 seconds, issue a curl command to http://[hostname]:31000/api/name and you will see that the greeting message has changed from Hello! to Greetings…​.
 
 `curl -u bob:bobpwd http://$IP:31000/api/name`{{execute}}
 
