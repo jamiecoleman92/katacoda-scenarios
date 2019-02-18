@@ -1,13 +1,23 @@
-## Start up minikube
+## Deploy Java microservices
 
-Firstly create your Kubernetes cluster using minikube. Execute the following command to get a cluster set up:
+Firstly lets just make sure our Kubernetes environment is set up by running the following command:
 
-`minikube start`{{execute}}
+`kubectl version`
 
-This will take around 30 seconds to complete denoted by the $ sign’s reappearance.
+You should now see the versions of your kubectl client and cluster. If so your environment is all set up.
 
-Now lets just do a quick check to make sure our Kubernetes environment is up and running by executing the following command:
+Now that you have your Kubernetes cluster up and running, you can deploy your microservices using the following command:
 
-`kubectl get nodes`{{execute}}
+`kubectl apply -f kubernetes.yaml`{{execute}}
 
-If you see the minikube node status as not ready then you may have to wait 5-15 seconds for it to become available. Once it has the status **Ready** you can then move on to the next step.
+While you are waiting for your services to start up, take a look at the provided kubernetes.yaml file that you will use to deploy your two Java microservices, by issuing the command below:
+
+`cat kubernetes.yaml`{{execute}}
+
+For each deployment, you can find information relating to the readiness probe, provided by Kubernetes, underneath the ‘readinessProbe’ attribute.
+
+This Kubernetes readiness probe in these services are using MicroProfile health. Issue the following command to check the health of your pods:
+
+`kubectl get pods`{{execute}}
+
+You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservice is fully deployed and waiting for requests. Once this has happened you can move on to the next step.

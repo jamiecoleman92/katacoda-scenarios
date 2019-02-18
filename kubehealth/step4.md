@@ -1,13 +1,21 @@
-## Turn one of your Microservices Unhealthy
+## Test out the readiness Probe
 
-Now that your microservices are up and running and you have made sure that your requests are working, we can monitor the microservices’ health. Let’s start by making one of our microservices unhealthy. To do this, we need to hit a specific health endpoint provided by the MicroProfile specification, which allows you to make a service unhealthy
-
-`curl -X POST http://$IP:31000/api/name/unhealthy`{{execute}}
-
-If you now check the health of your pods you should notice one of them has gone into a **Not ready** state.
+The unhealthy deployment should automatically recover. This should take around 1 minute, and will show the ready state when you run the following command:
 
 `kubectl get pods`{{execute}}
 
-Now if you send a request to the endpoint again you will notice it will not fail as your other microservice will now handle the request:
+Once it has recovered you are going to make both name pods unhealthy by making a POST request to each deployment.
 
-`curl http://$IP:31000/api/name`{{execute}}
+`curl -X POST http://$IP:31000/api/name/unhealthy`{{execute}}
+
+`curl -X POST http://$IP:31000/api/name/unhealthy`{{execute}}
+
+ If the response from the second request has the same pod name as the first, wait 5 seconds and run the command again. This is because the readiness probe has not noticed the microservice has become unhealthy.
+
+ Now check that both pods are no longer in a ready state:
+
+ `kubectl get pods`{{execute}}
+
+ You should soon notice that the ping microservice has also changed state. This is because the readiness probe for that pod has realized the name pod is no longer receiving requests and as such the ping microservice no longer works.
+
+ After a small amount of time, if you keep running the previous command you will notice the name pods recover and change state to ready. Following this, the ping microservice will also become available after a short amount of time.
