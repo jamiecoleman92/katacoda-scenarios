@@ -4,7 +4,7 @@ The two microservices you will deploy are called name and ping. The name microse
 
 `mvn package`{{execute}}
 
-When the build succeeds, run the following command to deplot the necessary Kubernetes resources to serve the applications:
+When the build succeeds, run the following command to deploy the necessary Kubernetes resources to serve the applications:
 
 `kubectl apply -f kubernetes.yaml`{{execute}}
 
