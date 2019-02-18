@@ -2,9 +2,9 @@
 
 Firstly lets just make sure our Kubernetes environment is set up by running the following command:
 
-`kubectl version`
+`kubectl version`{{execute}}
 
-You should now see the versions of your kubectl client and cluster. If so your environment is all set up.
+You should now see the versions of your kubectl client and cluster. If so your environment is all set up. If you do not see the version of your Kubernetes server wait a few moments and repeat the previous command until it is shown.
 
 Now that you have your Kubernetes cluster up and running, you can deploy your microservices using the following command:
 
