@@ -1,6 +1,6 @@
 ## Make requests to the microservices
 
-Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
+Now your microservices are deployed and running, you are ready to send some requests.
 
 Firstly check the IP address of your Kubernetes cluster by running the following command:
 

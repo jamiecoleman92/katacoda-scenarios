@@ -1,5 +1,5 @@
 {
-  "title": "Kubernetes Microservice Health Tutorial",
+  "title": "Interactive Tutorial - Configuring Readiness Probe for Java Microservice",
   "description": "Test the health of two Java Microserives with health check",
   "difficulty": "beginner",
   "time": "15 minutes",

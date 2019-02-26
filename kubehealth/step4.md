@@ -1,6 +1,6 @@
 ## Test out the readiness Probe
 
-The unhealthy deployment should automatically recover. This should take around 1 minute, and will show the ready state when you run the following command:
+The unhealthy deployment should automatically recover after about 1 minute. Run the following command until you see the READY state return to "1/1."
 
 `kubectl get pods`{{execute}}
 
