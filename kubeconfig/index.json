@@ -42,14 +42,6 @@
    "finish": {
       "text": "finish.md"
     },
-    "assets": {
-      "host01": [
-        {
-          "file": "kubernetes.yaml",
-          "target": "~/"
-        }
-      ]
-    }
     },
   "environment": {
     "uilayout": "editor-terminal"
