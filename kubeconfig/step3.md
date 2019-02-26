@@ -1,6 +1,6 @@
 ## Modifying the Name Microservice
 
-The name service is hardcoded to have Hello! as the greeting message. You’ll make this message configurable. Replace the NameResource class in the start/name/src/main/java/io/openliberty/guides/name/NameResource.java file with the following by using the provided text editor in Katacoda:
+The name service is hardcoded to have "Hello! I'm container {container name}"" as the greeting message. You’ll make this message configurable by replacing the NameResource class in the start/name/src/main/java/io/openliberty/guides/name/NameResource.java file with the following by using the provided text editor in Katacoda:
 
 ```java
 package io.openliberty.guides.name;

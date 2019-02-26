@@ -7,7 +7,7 @@ Create a ConfigMap to configure the greeting with the following kubectl command:
 
 `kubectl create configmap greeting-config --from-literal message=Greetings...`{{execute}}
 
-This command deploys a ConfigMap named greeting-config to your cluster. It has a key called message with a value of Greetings…​. The --from-literal flag allows you to specify individual key-value pairs to store in this ConfigMap. Other available options, such as --from-file and --from-env-file, provide more versatility as to what you want to configure. Details about these options can be found in the Kubernetes CLI documentation.
+This command deploys a ConfigMap named greeting-config to your cluster. It has a key called `message` with a value of `Greetings…`. The `--from-literal` flag allows you to specify individual key-value pairs to store in this ConfigMap. Other available options, such as `--from-file` and `--from-env-file`, provide more versatility as to what you want to configure. Details about these options can be found in the Kubernetes CLI documentation.
 
 Create a Secret to configure the credentials that ping will use to authenticate against name with the following kubectl command:
 

@@ -1,6 +1,6 @@
 ## Updating Kubernetes resources
 
-Next, you will update your Kubernetes deployments to set the environment variables in your containers based on the values configured in the ConfigMap and Secret created previously. The env sections under the name-container and ping-container containers are where the environment variables will be set.
+You will now update your Kubernetes deployments to set the environment variables in your containers, based on the values configured in the ConfigMap and Secret created previously. The env sections under the name-container and ping-container containers are where the environment variables will be set.
 
 Replace the contents of the kubernetes.yaml file with the following:
 

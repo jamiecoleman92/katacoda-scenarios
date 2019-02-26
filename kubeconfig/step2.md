@@ -4,7 +4,7 @@ Issue the following command to check the health of your microservices:
 
 `kubectl get pods`{{execute}}
 
-You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next step.
+You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next part of this step.
 Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
 
 Firstly check the IP address of your Kubernetes cluster by running the following command:
@@ -15,7 +15,7 @@ Now you need to set the variable IP to the IP address of your Kubernetes cluster
 
 `IP=$(minikube ip)`{{execute}}
 
-Now when you run the following command that contains the required username and password, it will use the IP address of your cluster.
+When you run the following command that contains the required username and password, it will use the IP address of your cluster.
 
 `curl -u bob:bobpwd http://$IP:31000/api/name`{{execute}}
 
