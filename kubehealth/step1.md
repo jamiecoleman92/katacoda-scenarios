@@ -1,10 +1,10 @@
 ## Deploy Java microservices
 
-Firstly lets just make sure our Kubernetes environment is set up by running the following command:
+Lets begin by ensuring our Kubernetes environment is set up by running the following command:
 
 `kubectl version`{{execute}}
 
-You should now see the versions of your kubectl client and cluster. If so your environment is all set up. If you do not see the version of your Kubernetes server wait a few moments and repeat the previous command until it is shown.
+If the command returns the versions of your kubectl client and cluster, the environment is configured.  Otherwise, repeat the previous command until the command returns the versions.
 
 Now that you have your Kubernetes cluster up and running, you can deploy your microservices using the following command:
 
@@ -20,4 +20,4 @@ This Kubernetes readiness probe in these services are using MicroProfile health.
 
 `kubectl get pods`{{execute}}
 
-You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next step.
+The microservices are fully deployed and ready for requests when the `READY` column indicates `1/1` for each deployment.  Repeat the previous command until all deployments are ready before continuing to the next step.

@@ -1,6 +1,6 @@
 ## Test out the readiness Probe
 
-The unhealthy deployment should automatically recover after about 1 minute. Run the following command until you see the READY state return to "1/1."
+The unhealthy deployment should automatically recover after about 1 minute. Run the following command until you see the `READY` state return to `1/1`.
 
 `kubectl get pods`{{execute}}
 
@@ -16,6 +16,6 @@ Once it has recovered you are going to make both name pods unhealthy by making a
 
  `kubectl get pods`{{execute}}
 
- You should soon notice that the ping microservice has also changed state. This is because the readiness probe for that pod has realized the name pod is no longer receiving requests and as such the ping microservice no longer works.
+ You should soon notice that the ping microservice has also changed state. This is because the readiness probe for that pod has realized the demo pod is no longer receiving requests and as such the ping microservice no longer works.
 
  After a small amount of time, if you keep running the previous command you will notice the name pods recover and change state to ready. Following this, the ping microservice will also become available after a short amount of time.
