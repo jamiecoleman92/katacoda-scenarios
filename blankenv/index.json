@@ -1,0 +1,28 @@
+{
+  "title": "Blank Enviroment",
+  "description": "For me to test stuff",
+  "difficulty": "beginner",
+  "time": "60 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "",
+        "text": "step1.md",
+        "code": "intro.sh"
+      }
+    ],
+  "intro": {
+    "text": "intro.md"
+  },
+   "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+    },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "minikube"
+  }
+}
