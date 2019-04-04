@@ -12,12 +12,20 @@
       }
     ],
   "intro": {
-    "text": "intro.md"
+    "text": "intro.md",
+    "courseData": "pre.sh"
   },
    "finish": {
       "text": "finish.md"
     },
     "assets": {
+      "host01": [
+        {
+          "file": "kubernetes.yaml",
+          "target": "~/"
+        }
+      ]
+    }
     },
   "environment": {
     "uilayout": "terminal"
