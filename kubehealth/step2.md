@@ -1,5 +1,11 @@
 ## Make requests to the microservices
 
+Issue the following command to check the health of your pods:
+
+`kubectl get pods`{{execute}}
+
+The microservices are fully deployed and ready for requests when the `READY` column indicates `1/1` for each deployment.  Repeat the previous command until all deployments are ready before continuing.
+
 Now that your microservices are deployed and running, you are ready to send some requests.
 
 Firstly check the IP address of your Kubernetes cluster by running the following command:
