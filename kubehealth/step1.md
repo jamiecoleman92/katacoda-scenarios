@@ -1,6 +1,6 @@
 ## Deploy Java microservices
 
-Let's begin by ensuring your Kubernetes environment is set up by running. MiniKube will be set up once you see the following message in the terminal `Done! Thank you for using minikube!`. Now run the following command to double check MiniKube is deployed:
+Let's begin by ensuring your Kubernetes environment is set up by running. MiniKube will be set up in around about a minute once you see the following message in the terminal `Done! Thank you for using minikube!`. Now run the following command to double check MiniKube is deployed:
 
 `kubectl version`{{execute}}
 
