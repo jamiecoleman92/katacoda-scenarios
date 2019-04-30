@@ -20,40 +20,6 @@ The second deployment `ping-deployment` does not specify any replicas as we only
 
 For each deployment, you can find information relating to the readiness probe, provided by Kubernetes, underneath the ‘readinessProbe’ attribute. We have specified a delay of 15 seconds that will give the deployment sufficient time to start up. The polling period is set to 5 seconds so it will check the pods health every 5 seconds and if it gets one bad request it will mark that pod as unhealthy.
 
-The Kubernetes readiness probes in these services are implemented using MicroProfile health. The two images that we are using for this tutorial have classes annotated with `@Health` that are integrated with CDI as shown in the code below taken from this service. It is a simple class that has a few methods one being to set a service as unhealthy so Kubernetes knows to no longer send traffic to it. Once you have had a look at the code below, please move on to the next step.
+The Kubernetes readiness probes in these services are implemented using MicroProfile health. The two Docker images that are being used for this tutorial have classes annotated with `@Health` that are integrated with CDI. Run the following command to have a look inside one of the classes used in this tutorial. This is just a simple class that contains a method `setUnhealthy()` that will make the service unhealthy for 60 seconds that allows the tutorial to demonstrate how useful this can be with Kubernetes. Once you have run the following command and had a look at the code behind the service please move on to the next step.
 
-```
-package io.openliberty.guides.name;
-
-import java.time.LocalDateTime;
-
-import javax.enterprise.context.ApplicationScoped;
-
-import org.eclipse.microprofile.health.Health;
-import org.eclipse.microprofile.health.HealthCheck;
-import org.eclipse.microprofile.health.HealthCheckResponse;
-
-@Health
-@ApplicationScoped
-public class NameHealth implements HealthCheck {
-    private static final int ALIVE_DELAY_SECONDS = 60;
-    private static LocalDateTime aliveAfter = LocalDateTime.now();
-
-    @Override
-    public HealthCheckResponse call() {
-        if (isAlive()) {
-            return HealthCheckResponse.named("isAlive").up().build();
-        }
-
-        return HealthCheckResponse.named("isAlive").down().build();
-    }
-
-    public static void setUnhealthy() {
-        aliveAfter = LocalDateTime.now().plusSeconds(ALIVE_DELAY_SECONDS);
-    }
-
-    private static boolean isAlive() {
-        return LocalDateTime.now().isAfter(aliveAfter);
-    }
-}
-```
+`cat guide-kubernetes-microprofile-health/finish/name/src/main/java/io/openliberty/guides/name/NameHealth.java`{{execute}}
