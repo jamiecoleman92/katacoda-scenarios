@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git clone https://github.com/openliberty/guide-kubernetes-microprofile-config.git
+git clone https://github.com/jamiecoleman92/guide-kubernetes-microprofile-config.git
