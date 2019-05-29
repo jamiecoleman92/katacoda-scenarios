@@ -10,11 +10,11 @@ Now you need to navigate into the projects directory that has been provided for 
 
 `cd guide-kubernetes-microprofile-config/start/`{{execute}}
 
-The two microservices you will deploy are called name and ping. The name microservice displays a brief greeting with the name of the container that contains the application. The ping microservice pings the Kubernetes Service that encapsulates the pod running the name microservice. The ping microservice demonstrates how communication can be established between pods inside a cluster. To build the applications with Maven, run the following commands;
+The two microservices you will deploy are called system and inventory. The system microservice returns JVM properties information about the container it is running in. The inventory microservice add the properties from the system microservice to the inventory. This demonstrates how communication can be established between pods inside a cluster. To build the applications with Maven, run the following commands;
 
-`mvn package -pl name`{{execute}}
+`mvn package -pl system`{{execute}}
 
-`mvn package -pl ping`{{execute}}
+`mvn package -pl inventory`{{execute}}
 
 Once the services have been built, you need to deploy them to Kubernetes. To do this use the following command:
 

@@ -17,10 +17,8 @@ Now you need to set the variable IP to the IP address of your Kubernetes cluster
 
 When you run the following command that contains the required username and password, it will use the IP address of your cluster.
 
-`curl -u bob:bobpwd http://$IP:31000/api/name`{{execute}}
+`curl -u bob:bobpwd http://$IP:31000/system/properties`{{execute}}
 
-You should see a response similar to the following:
+You should see a response that will show you the JVM system properties of the running container.
 
-**Hello! I'm container [container name]**
-
-Similarly, navigate to `curl http://$IP:32000/api/ping/name-service`{{execute}} and observe a response with the content pong.
+Similarly, navigate to `curl http://$IP:32000/inventory/systems/system-service`{{execute}}. This request will add properties from the system microservice into the inventory microservice.
