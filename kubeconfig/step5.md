@@ -5,13 +5,13 @@ There are several ways to configure an environment variable in a Docker containe
 
 Create a ConfigMap to configure the greeting with the following kubectl command:
 
-`kubectl create configmap greeting-config --from-literal message=Greetings...`{{execute}}
+`kubectl create configmap sys-app-name --from-literal name=my-system`{{execute}}
 
-This command deploys a ConfigMap named greeting-config to your cluster. It has a key called `message` with a value of `Greetings…`. The `--from-literal` flag allows you to specify individual key-value pairs to store in this ConfigMap. Other available options, such as `--from-file` and `--from-env-file`, provide more versatility as to what you want to configure. Details about these options can be found in the Kubernetes CLI documentation.
+This command deploys a ConfigMap named `sys-app-name` to your cluster. It has a key called `name` with a value of `my-system`. The `--from-literal` flag allows you to specify individual key-value pairs to store in this ConfigMap. Other available options, such as `--from-file` and `--from-env-file`, provide more versatility as to what you want to configure. Details about these options can be found in the Kubernetes CLI documentation.
 
-Create a Secret to configure the credentials that ping will use to authenticate against name with the following kubectl command:
+Create a Secret to configure the credentials that inventory will use to authenticate against system with the following kubectl command:
 
-`kubectl create secret generic name-credentials --from-literal username=bob --from-literal password=bobpwd`{{execute}}
+`kubectl create secret generic sys-app-credentials --from-literal username=bob --from-literal password=bobpwd`{{execute}}
 
 This command looks very similar to the command to create a ConfigMap, one difference is the word generic. It means that you’re creating a Secret that is generic, in other words it stores information that is not specialized in any way. There are different types of secrets, such as secrets to store Docker credentials and secrets to store public/private key pairs.
 

@@ -1,6 +1,6 @@
 ## Updating Kubernetes resources
 
-You will now update your Kubernetes deployments to set the environment variables in your containers, based on the values configured in the ConfigMap and Secret created previously. The env sections under the name-container and ping-container containers are where the environment variables will be set.
+You will now update your Kubernetes deployments to set the environment variables in your containers, based on the values configured in the ConfigMap and Secret created previously. In the kubernetes.yaml file where the containers are defined, you can see the valueFrom field that allows you to specify the value of an environment variable from various sources. These sources include a ConfigMap, a Secret, and information about the cluster. In this example configMapKeyRef gets the value name from the ConfigMap sys-app-name. Similarly, secretKeyRef gets the values username and password from the Secret sys-app-credentials.
 
 Replace the contents of the kubernetes.yaml file with the following:
 
@@ -8,72 +8,72 @@ Replace the contents of the kubernetes.yaml file with the following:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: name-deployment
+  name: system-deployment
   labels:
-    app: name
+    app: system
 spec:
   selector:
     matchLabels:
-      app: name
+      app: system
   template:
     metadata:
       labels:
-        app: name
+        app: system
     spec:
       containers:
-      - name: name-container
-        image: name:1.0-SNAPSHOT
+      - name: system-container
+        image: system:1.0-SNAPSHOT
         ports:
         - containerPort: 9080
-        # Set the GREETING environment variable
+        # Set the APP_NAME environment variable
         env:
-        - name: GREETING
+        - name: APP_NAME
           valueFrom:
             configMapKeyRef:
-              name: greeting-config
-              key: message
+              name: sys-app-name
+              key: name
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ping-deployment
+  name: inventory-deployment
   labels:
-    app: ping
+    app: inventory
 spec:
   selector:
     matchLabels:
-      app: ping
+      app: inventory
   template:
     metadata:
       labels:
-        app: ping
+        app: inventory
     spec:
       containers:
-      - name: ping-container
-        image: ping:1.0-SNAPSHOT
+      - name: inventory-container
+        image: inventory:1.0-SNAPSHOT
         ports:
         - containerPort: 9080
-        # Set the USERNAME and PASSWORD environment variables
+        # Set the SYSTEM_APP_USERNAME and SYSTEM_APP_PASSWORD environment variables
         env:
-        - name: USERNAME
+        - name: SYSTEM_APP_USERNAME
           valueFrom:
             secretKeyRef:
-              name: name-credentials
+              name: sys-app-credentials
               key: username
-        - name: PASSWORD
+        - name: SYSTEM_APP_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: name-credentials
+              name: sys-app-credentials
               key: password
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: name-service
+  name: system-service
 spec:
   type: NodePort
   selector:
-    app: name
+    app: system
   ports:
   - protocol: TCP
     port: 9080
@@ -83,16 +83,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ping-service
+  name: inventory-service
 spec:
   type: NodePort
   selector:
-    app: ping
+    app: inventory
   ports:
   - protocol: TCP
     port: 9080
     targetPort: 9080
     nodePort: 32000
 ```
-
-In the kubernetes.yaml file where the containers are defined, you can see the valueFrom field which allows you to specify the value of an environment variable from a variety of sources. These sources include a ConfigMap, a Secret, and information about the cluster. In this example configMapKeyRef gets the value message from the ConfigMap greeting-config. Similarly, secretKeyRef gets the values username and password from the Secret name-credentials.
