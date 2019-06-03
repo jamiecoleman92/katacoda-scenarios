@@ -21,4 +21,8 @@ When you run the following command that contains the required username and passw
 
 You should see a response that will show you the JVM system properties of the running container.
 
+Now if you run the following curl command it will only show you the response headers from the above request:
+
+`curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
+
 Similarly, navigate to `curl http://$IP:32000/inventory/systems/system-service`{{execute}}. This request will add properties from the system microservice into the inventory microservice.

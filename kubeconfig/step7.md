@@ -19,8 +19,8 @@ Now you need to delete your old deployment then deploy your updated microservice
 
 After around 30 seconds, issue a curl command to http://[hostname]:31000/system/properties and you should see that the response headers have changed from `system` to `my-system`​.
 
-`curl -u bob:bobpwd http://$IP:31000/system/properties`{{execute}}
+`curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
 
 Verify that http://[hostname]:32000/inventory/systems/system-service is working as intended. If it is not, then check the configuration of the credentials.
 
-`curl -u bob:bobpwd http://$IP:32000/inventory/systems/system-servicee`{{execute}}
+`curl -u bob:bobpwd http://$IP:32000/inventory/systems/system-service`{{execute}}

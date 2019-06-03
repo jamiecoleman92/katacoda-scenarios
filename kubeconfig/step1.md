@@ -1,6 +1,6 @@
 ## Build and Deploy the Java microservices
 
-To begin, make sure your Kubernetes environment is set up by running the following command:
+To begin, make sure your Kubernetes environment is set up by waiting for the terminal to display the message `Done! Thank you for using minikube!` and then running the following command:
 
 `kubectl version`{{execute}}
 
@@ -10,7 +10,7 @@ Now you need to navigate into the projects directory that has been provided for 
 
 `cd guide-kubernetes-microprofile-config/start/`{{execute}}
 
-The two microservices you will deploy are called system and inventory. The system microservice returns JVM properties information about the container it is running in. The inventory microservice add the properties from the system microservice to the inventory. This demonstrates how communication can be established between pods inside a cluster. To build the applications with Maven, run the following commands;
+The two microservices you will deploy are called system and inventory. The system microservice returns JVM properties information about the container it is running in. The inventory microservice add the properties from the system microservice to the inventory. This demonstrates how communication can be established between pods inside a cluster. To build the applications with Maven, run the following commands one after the other:
 
 `mvn package -pl system`{{execute}}
 
