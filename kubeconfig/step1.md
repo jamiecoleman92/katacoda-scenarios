@@ -1,6 +1,6 @@
 ## Build and Deploy the Java microservices
 
-To begin, make sure your Kubernetes environment is set up. Once the terminal is showing `$` and has finished running the setup, run the following command to confirm it is ready:
+To begin, make sure your Kubernetes environment is set up. Once the terminal has finished outputting messages and is ready for input it should be setup. To confirm it is ready please run the following command:
 
 `kubectl version`{{execute}}
 

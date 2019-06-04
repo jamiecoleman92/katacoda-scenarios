@@ -4,7 +4,7 @@ You will now update your Kubernetes deployments to set the environment variables
 
 Replace the contents of the kubernetes.yaml file with the following:
 
-```yaml
+<pre class="file" data-target="clipboard">
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -93,4 +93,4 @@ spec:
     port: 9080
     targetPort: 9080
     nodePort: 32000
-```
+</pre>
