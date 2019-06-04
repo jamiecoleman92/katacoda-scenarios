@@ -25,4 +25,6 @@ Now if you run the following curl command it will only show you the response hea
 
 `curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
 
+Take a note of the X-App-Name: `system`
+
 Similarly, navigate to `curl http://$IP:32000/inventory/systems/system-service`{{execute}}. This request will add properties from the system microservice into the inventory microservice.
