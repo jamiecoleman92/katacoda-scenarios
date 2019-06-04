@@ -2,7 +2,7 @@
 
 The system service is hardcoded to have `system` as the app name. You’ll make this configurable by adding the appName member and X-App-Name header in the start/system/src/main/java/io/openliberty/guides/system/SystemResource.java file with the following by using the provided text editor in Katacoda:
 
-```java
+<pre class="file" data-target="clipboard">
 package io.openliberty.guides.system;
 
 // CDI
@@ -38,6 +38,6 @@ public class SystemResource {
       .build();
   }
 }
-```{{copy}}
+</pre>
 
 These changes use MicroProfile Config and CDI to inject the value of an environment variable called `APP_NAME` into the `appName` member of the `SystemResource class`.
