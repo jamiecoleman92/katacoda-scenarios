@@ -1,30 +1,35 @@
 ## Making requests to the microservices
 
-Issue the following command to check the health of your microservices:
+Issue the following command to check the status of your microservices:
 
 `kubectl get pods`{{execute}}
 
-You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next part of this step.
+If you see 0/1 beside the status **not ready**, wait a little while and check again. This will change to 1/1 and **Running** when your microservices are ready to receive requests.
+
 Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
 
 Firstly check the IP address of your Kubernetes cluster by running the following command:
 
 `minikube ip`{{execute}}
 
-Now you need to set the variable IP to the IP address of your Kubernetes cluster by running the following command:
+Now you need to set the environment variable `IP` to the IP address of your Kubernetes cluster by running the following command:
 
 `IP=$(minikube ip)`{{execute}}
 
-When you run the following command that contains the required username and password, it will use the IP address of your cluster.
+Next, you'll use `curl` to make an `HTTP GET` request to the 'system' service. The service is secured with a user id and password that is passed in the request.
 
 `curl -u bob:bobpwd http://$IP:31000/system/properties`{{execute}}
 
 You should see a response that will show you the JVM system properties of the running container.
 
-Now if you run the following curl command it will only show you the response headers from the above request:
+
+Similarly, use the following `curl` command to call the inventory service:  
+
+`curl http://$IP:32000/inventory/systems/system-service`{{execute}}
+
+The inventory service will call the system service and store the response data in the inventory service before returning the result.
+
+In this tutorial, you're going to use a Kubernetes ConfigMap to modify the `X-App-Name:` response header. Take a look at their current values by running the following curl command:
 
 `curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
 
-Pay attention to the `X-App-Name:` as this is the element we are going to make configurable in this tutorial.
-
-Similarly, navigate to `curl http://$IP:32000/inventory/systems/system-service`{{execute}}. This request will add properties from the system microservice into the inventory microservice.
