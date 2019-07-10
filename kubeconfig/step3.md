@@ -1,6 +1,6 @@
 ## Modifying the System Microservice
 
-The system service is hardcoded to have `system` as the app name. You’ll make this configurable by adding the appName member and X-App-Name header in the `system/src/main/java/system/SystemResource.java` file with the following by using the provided text editor in Katacoda:
+The system service is hardcoded to have `system` as the app name. You’ll make this configurable by adding the appName member and X-App-Name header in the `system/src/main/java/system/SystemResource.java`{{open}} file with the following by using the provided text editor in Katacoda:
 
 <pre class="file" data-target="clipboard">
 package system;

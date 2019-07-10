@@ -16,8 +16,13 @@ Now you need to delete your old deployment then deploy your updated microservice
 
 `kubectl apply -f kubernetes.yaml`{{execute}}
 
+Run the following command to monitor the state of your pods
 
-After around 30 seconds, issue a curl command to http://[hostname]:31000/system/properties and you should see that the response headers have changed from `system` to `my-system`​.
+`kubectl get --watch pods`{{execute}}
+
+User ctrl-c to exit the command once your pods are in a ready state (After around 30 seconds)
+
+Issue a curl command to http://[hostname]:31000/system/properties and you should see that the response headers have changed from `system` to `my-system`​.
 
 `curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
 

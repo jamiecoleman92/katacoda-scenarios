@@ -2,10 +2,10 @@
 
 Issue the following command to check the health of your microservices:
 
-`kubectl get pods`{{execute}}
+`kubectl get --watch pods`{{execute}}
 
 You should see 0/1 besides the status **not ready**. This will change to 1/1 when your microservices is fully deployed and waiting for requests. Once this has happened you can move on to the next part of this step.
-Now your microservices are deployed and running with the **Ready** status you are ready to send some requests.
+Now your microservices are deployed and running with the **Ready** status you are ready to send some requests. Just press `ctrl-c` to exit the terminal command.
 
 Firstly check the IP address of your Kubernetes cluster by running the following command:
 
