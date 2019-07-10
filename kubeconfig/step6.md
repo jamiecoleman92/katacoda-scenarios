@@ -1,6 +1,6 @@
 ## Updating Kubernetes resources
 
-You will now update your Kubernetes deployments to set the environment variables in your containers, based on the values configured in the ConfigMap and Secret created previously. In the kubernetes.yaml file (located in the start directory) where the containers are defined, you can see the valueFrom field that allows you to specify the value of an environment variable from various sources. These sources include a ConfigMap, a Secret, and information about the cluster. In this example configMapKeyRef gets the value name from the ConfigMap sys-app-name. Similarly, secretKeyRef gets the values username and password from the Secret sys-app-credentials.
+You will now update your Kubernetes deployment to set the environment variables in your containers, based on the values configured in the ConfigMap and Secret. Edit the `kubernetes.yaml` file (located in the `start` directory). This file defines the the Kubernetes deployment.  Note the `valueFrom` field. This specifies the value of an environment variable, and can be set from various sources. Sources include a ConfigMap, a Secret, and information about the cluster. In this example `configMapKeyRef` sets the key `name` with the value of the ConfigMap `sys-app-name`. Similarly, `secretKeyRef` sets the keys `username` and `password` with values from the Secret `sys-app-credentials`.
 
 Replace the contents of the kubernetes.yaml file with the following:
 

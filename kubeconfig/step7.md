@@ -1,31 +1,46 @@
 ## Deploying your changes
 
-Rebuild the application using the following commands:
+You now need rebuild and redeploy the applications for your changes to take effect. Rebuild the application using the following commands, making sure you're in the `start` directory:
 
 `mvn package -pl system`{{execute}}
 
 `mvn package -pl inventory`{{execute}}
 
-Navigate to the root folder of the project located in the `start` directory.
-
-`cd /guide-kubernetes-microprofile-config/start/`{{execute}}
-
-Now you need to delete your old deployment then deploy your updated microservices by issuing the following commands:
+Now you need to delete your old Kubernetes deployment then deploy your updated deployment by issuing the following commands:
 
 `kubectl delete -f kubernetes.yaml`{{execute}}
 
 `kubectl apply -f kubernetes.yaml`{{execute}}
 
-Run the following command to monitor the state of your pods
+You should see the following output from the commands:
+
+`
+$ kubectl delete -f kubernetes.yaml
+deployment.apps "system-deployment" deleted
+deployment.apps "inventory-deployment" deleted
+service "system-service" deleted
+service "inventory-service" deleted
+$ kubectl apply -f kubernetes.yaml
+deployment.apps/system-deployment created
+deployment.apps/inventory-deployment created
+service/system-service created
+service/inventory-service created
+`
+Check the status of the pods for the services with:
 
 `kubectl get --watch pods`{{execute}}
 
-User ctrl-c to exit the command once your pods are in a ready state (After around 30 seconds)
+You should eventually see the status of **Ready** for the two services.  
 
-Issue a curl command to http://[hostname]:31000/system/properties and you should see that the response headers have changed from `system` to `my-system`​.
+Call the updated system service and check the headers using the curl command:
+
 
 `curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
 
-Verify that http://[hostname]:32000/inventory/systems/system-service is working as intended. If it is not, then check the configuration of the credentials.
+You should see that the response `X-App-Name` header has changed from `system` to `my-system`​.
 
-`curl -u bob:bobpwd http://$IP:32000/inventory/systems/system-service`{{execute}}
+Verify that inventory service is now using the Kubernetes Secret for the credentials by making the following curl request:
+
+`curl http://$IP:32000/inventory/systems/system-service`{{execute}}
+
+If the request fails, check you've configured the Secret correctly.
