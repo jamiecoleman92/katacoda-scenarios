@@ -30,7 +30,7 @@ Check the status of the pods for the services with:
 
 `kubectl get --watch pods`{{execute}}
 
-You should eventually see the status of **Ready** for the two services.  
+You should eventually see the status of **Ready** for the two services. Press `Ctrl-C` to exit the terminal command. 
 
 Call the updated system service and check the headers using the curl command:
 
