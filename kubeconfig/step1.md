@@ -4,7 +4,7 @@ To begin, make sure your Kubernetes environment is set up. Once the terminal has
 
 `kubectl version`{{execute}}
 
-You should now see the versions of your kubectl client and cluster. If so, your environment is all set up. If you do not see the version of your Kubernetes server wait a few moments and repeat the previous command until it is shown.
+You should now see the versions of your kubectl client and server. If so, your environment is all set up. If you do not see the version of your Kubernetes server wait a few moments and repeat the previous command until it is shown.
 
 Now you need to navigate into the project directory that has been provided for you.  This contains the implementation of the MicroProfile microservices, configuration for the MicroProfile runtime, and Kubernetes configuration.
 
