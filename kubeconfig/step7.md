@@ -26,6 +26,7 @@ deployment.apps/inventory-deployment created
 service/system-service created
 service/inventory-service created
 `
+
 Check the status of the pods for the services with:
 
 `kubectl get --watch pods`{{execute}}
