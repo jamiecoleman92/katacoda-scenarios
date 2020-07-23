@@ -8,9 +8,7 @@ You now need rebuild and redeploy the applications for your changes to take effe
 
 Now you need to delete your old Kubernetes deployment then deploy your updated deployment by issuing the following commands:
 
-`kubectl delete -f kubernetes.yaml`{{execute}}
-
-`kubectl apply -f kubernetes.yaml`{{execute}}
+`kubectl replace --force -f kubernetes.yaml`{{execute}}
 
 You should see the following output from the commands:
 
@@ -36,12 +34,12 @@ You should eventually see the status of **Ready** for the two services. Press `C
 Call the updated system service and check the headers using the curl command:
 
 
-`curl -u bob:bobpwd -D - http://$IP:31000/system/properties -o /dev/null`{{execute}}
+`curl -u bob:bobpwd -D - http://$( minikube ip ):31000/system/properties -o /dev/null`{{execute}}
 
 You should see that the response `X-App-Name` header has changed from `system` to `my-system`​.
 
 Verify that inventory service is now using the Kubernetes Secret for the credentials by making the following curl request:
 
-`curl http://$IP:32000/inventory/systems/system-service`{{execute}}
+`curl http://$( minikube ip ):32000/inventory/systems/system-service`{{execute}}
 
 If the request fails, check you've configured the Secret correctly.
