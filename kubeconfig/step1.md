@@ -16,6 +16,7 @@ The two microservices you will deploy are called 'system' and 'inventory'. The s
 
 `mvn package -pl system`{{execute}}
 
+
 `mvn package -pl inventory`{{execute}}
 
 Once the services have been built, you need to deploy them to Kubernetes. To learn more about Kubernetes manifests, check out the following documentation: https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
