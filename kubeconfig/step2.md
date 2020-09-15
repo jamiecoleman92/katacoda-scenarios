@@ -7,7 +7,7 @@ The two commands below will check the status of the pods and check when they are
 
 `kubectl wait --for=condition=ready pod -l app=system`{{execute}}
 
-If you see 0/1 beside the status **not ready**, wait a little while and check again. This will change to 1/1 and **Running** when your microservices are ready to receive requests.
+Once you see the ourput **condition met** from each of the above commands it means your microservices are ready to receive requests. 
 
 Now your microservices are deployed and running with the **Ready** status you are ready to send some requests. Press `Ctrl-C` to exit the terminal command. Your pod currently does not have health checks implemented so even though the above command says **Ready** you application may not be ready to receive requests. Adding health checks is beyond the scope of this tutorial but it is something to keep in mind when using Kubernetes.
 
