@@ -3,6 +3,8 @@
 The two commands below will check the status of the pods and check when they are in a ready state. This is done by providing the command with the labels for the pod such as `inventory`. Issue the following commands to check the status of your microservices:
 
 `kubectl wait --for=condition=ready pod -l app=inventory`{{execute}}
+
+
 `kubectl wait --for=condition=ready pod -l app=system`{{execute}}
 
 If you see 0/1 beside the status **not ready**, wait a little while and check again. This will change to 1/1 and **Running** when your microservices are ready to receive requests.
