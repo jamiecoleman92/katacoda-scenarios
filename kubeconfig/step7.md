@@ -13,16 +13,15 @@ Now you need to delete your old Kubernetes deployment then deploy your updated d
 You should see the following output from the commands:
 
 `
-$ kubectl delete -f kubernetes.yaml
+$ kubectl replace --force -f kubernetes.yaml
 deployment.apps "system-deployment" deleted
 deployment.apps "inventory-deployment" deleted
 service "system-service" deleted
 service "inventory-service" deleted
-$ kubectl apply -f kubernetes.yaml
-deployment.apps/system-deployment created
-deployment.apps/inventory-deployment created
-service/system-service created
-service/inventory-service created
+deployment.apps/system-deployment replaced
+deployment.apps/inventory-deployment replaced
+service/system-service replaced
+service/inventory-service replaced
 `
 
 Check the status of the pods for the services with:
