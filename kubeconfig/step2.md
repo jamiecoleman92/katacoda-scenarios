@@ -25,5 +25,5 @@ The inventory service will call the system service and store the response data i
 
 In this tutorial, you're going to use a Kubernetes ConfigMap to modify the `X-App-Name:` response header. Take a look at their current values by running the following curl command:
 
-`curl -# -I -u bob:bobpwd -D - http://$IP:31000/system/properties | grep -i ^X-App-Name:`{{execute}}
+`curl -# -I -u bob:bobpwd -D - http://$( minikube ip ):31000/system/properties | grep -i ^X-App-Name:`{{execute}}
 
