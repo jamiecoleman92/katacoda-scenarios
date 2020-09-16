@@ -7,9 +7,9 @@ The two commands below will check the status of the pods and check when they are
 
 `kubectl wait --for=condition=ready pod -l app=system`{{execute}}
 
-Once you see the ourput **condition met** from each of the above commands it means your microservices are ready to receive requests. 
+Once you see the output **condition met** from each of the above commands it means your microservices are ready to receive requests. 
 
-Now your microservices are deployed and running with the **Ready** status you are ready to send some requests. Press `Ctrl-C` to exit the terminal command. Your pod currently does not have health checks implemented so even though the above command says **Ready** you application may not be ready to receive requests. Adding health checks is beyond the scope of this tutorial but it is something to keep in mind when using Kubernetes.
+Now that your microservices are deployed and running with the **Ready** status you are ready to send some requests.
 
 
 Next, you'll use `curl` to make an `HTTP GET` request to the 'system' service. The service is secured with a user id and password that is passed in the request.
