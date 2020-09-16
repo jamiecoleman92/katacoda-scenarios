@@ -10,9 +10,9 @@ Now you need to navigate into the project directory that has been provided for y
 
 `cd guide-kubernetes-microprofile-config/start/`{{execute}}
 
-You will notice their is a 'finish' directory. This contains the finished code for this tutorial for reference.
+You will notice there is a 'finish' directory. This contains the finished code for this tutorial for reference.
 
-The two microservices you will deploy are called 'system' and 'inventory'. The system microservice returns JVM properties information about the container it is running in. The inventory microservice adds the properties from the system microservice into the inventory. This demonstrates how communication can be achieved between two microservices in separate pod's inside a Kubernetes cluster. To build the applications with Maven, run the following commands one after the other:
+The two microservices you will deploy are called 'system' and 'inventory'. The system microservice returns JVM properties of the container it is running in. The inventory microservice adds the properties from the system microservice into the inventory. This demonstrates how communication can be achieved between two microservices in separate pods inside a Kubernetes cluster. To build the applications with Maven, run the following commands one after the other:
 
 `mvn package -pl system`{{execute}}
 
@@ -21,6 +21,6 @@ The two microservices you will deploy are called 'system' and 'inventory'. The s
 
 Once the services have been built, you need to deploy them to Kubernetes. To learn more about Kubernetes manifests, check out the following documentation: https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
 
-To do this use the following command:
+To do this use, the following command:
 
 `kubectl apply -f kubernetes.yaml`{{execute}}
