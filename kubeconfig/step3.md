@@ -40,4 +40,4 @@ public class SystemResource {
 }
 </pre>
 
-These changes use MicroProfile Config and CDI to inject the value of an environment variable called `APP_NAME` into the `appName` member of the `SystemResource` class.  MicroProfile Config supports a number of `config sources` from which to receive configuration, including environment variables. 
+These changes use MicroProfile Config and CDI to inject the value of an environment variable called `APP_NAME` into the `appName` member of the `SystemResource` class.  MicroProfile Config supports a number of config sources from which to receive configuration, including environment variables. 
