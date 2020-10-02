@@ -46,7 +46,8 @@
   "environment": {
     "uilayout": "editor-terminal"
   },
-  "backend": {
-    "imageid": "minikube"
-  }
+	"backend": {
+		"port": 30000,
+		"dockerimage": "minikube-running"
+	}
 }
